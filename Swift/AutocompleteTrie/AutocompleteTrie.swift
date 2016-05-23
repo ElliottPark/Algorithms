@@ -1,15 +1,22 @@
-//
-//  AutocompleteTrie.swift
-//  AutocompleteTrie
-//
-//  Created by Elliott Park on 5/14/16.
-//  This program is in the public domain.
-//  It is based on Steve Hanov's blog post: http://stevehanov.ca/blog/index.php?id=114
-//  The original code has been rewritten from Python to Swift (my very first Swift program)
-//  and modified to accept characters one at a time instead of all at once, making it
-//  ideal for use as an approximate autocompleter
-//
+/*
+ * AutocompleteTrie.swift
+ * AutocompleteTrie
+ *
+ * Created by Elliott Park on 5/14/16.
+ * This program is in the public domain.
+ * It is based on Steve Hanov's blog post: http://stevehanov.ca/blog/index.php?id=114
+ * The original code has been rewritten from Python to Swift (my very first Swift program)
+ * and modified to accept characters one at a time instead of all at once, making it
+ * ideal for use as an approximate autocompleter
+ *
+ */
 
+/**
+ * A trie data sctructure that incrementally calculates the Damerau-Levenstein distance between a stream
+ * of input characters and words saved in the trie. After each letter is entered into the AutocompleteTrie,
+ * it returns all of the words that could both complete and be within a maximum distance threshold of what
+ * has been entered so far.
+ */
 import Foundation
 
 class AutocompleteTrie {
