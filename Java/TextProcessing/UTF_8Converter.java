@@ -1,5 +1,5 @@
 /*
- * Written by Elliott Park, 2016
+ * Rewritten from C by Elliott Park, 2016
  * Released to the public domain
  */
 
@@ -16,7 +16,7 @@ public class UTF_8Converter {
 
         int n = s.length - index;
         if ((s[0] == 0)){
-            return 0;               /* no shift states */
+            return 0;              
         }
 
         if (n == 0) {
